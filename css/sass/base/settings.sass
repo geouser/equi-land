@@ -28,3 +28,40 @@ body
 // other overall settings
 +placeholder
     opacity: 1
+
+
+.bouncing-loader
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100vw
+  background-color: #ffffff
+  z-index: 1000
+  transition: all .4s ease-out
+
+  &.animated 
+      visibility: hidden
+      opacity: 0
+      pointer-events: none
+
+.bouncing-loader__round
+  width: 100px
+  height: 60px
+  background-image: url('../images/logo.png')
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: center center
+  animation: bounce 0.8s infinite alternate
+
+@keyframes bounce
+  from
+    opacity: 1
+    transform: translateY(0)
+
+  to
+    opacity: 0.1
+    transform: translateY(-20px)
