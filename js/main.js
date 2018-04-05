@@ -105,7 +105,30 @@ jQuery(document).ready(function($) {
                 }
             }
         ]
-    })
+    });
+
+    $(window).on('resize', function(event) {
+        event.preventDefault();
+
+        ajust_slides_height();
+    });
+    
+    ajust_slides_height();
+    
+
+    function ajust_slides_height() {
+        var maxHeight = -1;
+        $('.news-slider .slick-slide').each(function() {
+          if ($(this).height() > maxHeight) {
+            maxHeight = $(this).height();
+          }
+        });
+        $('.news-slider .slick-slide').each(function() {
+          if ($(this).height() < maxHeight) {
+            $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
+          }
+        });
+    }
 
 
 

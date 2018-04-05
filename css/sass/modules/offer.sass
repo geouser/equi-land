@@ -159,6 +159,11 @@
 
 	&-slider
 		position: relative
+		transition: opacity 0.5s ease
+		opacity: 0
+		
+		&.slick-initialized
+			opacity: 1
 		
 		@media (max-width: 575px)
 			margin-left: -22px
