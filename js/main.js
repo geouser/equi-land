@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
         vertical: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         responsive: [
             {
@@ -114,7 +114,7 @@ jQuery(document).ready(function($) {
     });
     
     ajust_slides_height();
-    
+
 
     function ajust_slides_height() {
         var maxHeight = -1;
