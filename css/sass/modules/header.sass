@@ -1,48 +1,110 @@
 .header
-	+position(fixed, 0, 0, auto, 0)
-	+transition(all, .4s)
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	width: 100%
+	z-index: 20
+	padding-top: 50px
+	padding-bottom: 25px  
 	
-	height: 110px
-	color: #FFF
+	@media (max-height: 750px) and (min-width: 1200px)
+		padding: 20px 0
+		
+	@media (max-width: 1199px)
+		position: relative
+		padding: 20px 0
+		
 	
-	.container-fluid
-		height: 100% 
-		padding: 0 40px 
-		.row
-			height: 100%
+	&-container
+		padding: 0 50px
+		
+		@media (max-width: 1600px)
+			padding: 0 25px
 			
-.headroom--unpinned
-    transform: translateY(-100%)
-.headroom--pinned,
-.headroom--bottom 
-	transform: translateY(0)
+		@media (max-width: 575px)
+			padding: 0 15px
+		
 
-/* ------------------------------------ */
-/*  NAV STYLES  */
+	.flex-row
+		@extend .row
+		margin: 0
+		
+	.site-menu
+		.flex-row
+			align-items: center
+			
+			@media (max-width: 1199px)
+				justify-content: center
+			
+	.site-actions
 
-.page-menu
-	ul
-		list-style-type: none
+		@media (max-width: 1199px)
+			padding-top: 20px
+			 
+		.flex-row
+			justify-content: flex-end
+			
+			@media (max-width: 1199px)
+				justify-content: center
+			
+		.btn
+			@media (min-width: 576px)
+				&:not(:last-child)
+					margin-right: 10px 
+				
+			@media (max-width: 575px)
+				margin: 5px
 
-		li
-			display: inline-block
-			vertical-align: middle
-			margin: 0 10px
 
-			a
-				color: #fff
-				text-transform: uppercase
+			
+	.site-logo
+		display: block
+		width: 100px
+		
+		@media (min-width: 1200px)
+			margin-bottom: -20px 
+		
+		img
+			display: block
+			width: 100%
+			
 
-/* ------------------------------------ */
-/*  MENU BUTTON  */
-
-.menu-button
-	display: none
-	+position(fixed, 15px, 10px, auto, auto)
-	background: white
-	border-radius: 50%
-	box-shadow: 0 5px 10px rgba(black, 0.5)
-	cursor: pointer
-	transform: rotate(0deg)
-	transition: .5s ease-in-out
-	cursor: pointer
+	.menu
+		padding-left: 60px
+		
+		@media (max-width: 1600px)
+			padding-left: 30px 
+			
+		@media (max-width: 1199px)
+			width: 100%
+			text-align: center
+			padding-top: 20px
+			padding-left: 0  
+		
+		ul
+			list-style: none 
+			
+			li
+				display: inline-block
+				vertical-align: middle 
+				
+				@media (max-width: 575px)
+					font-size: 16px 
+				
+				&:not(:last-child)
+					margin-right: 35px 
+					
+					@media (max-width: 1600px)
+						margin-right: 20px 
+				
+				a
+					color: $color-primary
+					
+					&:hover
+						text-decoration: underline
+						color: $color-primary-hover
+						
+				span
+					font-style: italic 
+					color: #aaaaaa

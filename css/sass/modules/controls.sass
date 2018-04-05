@@ -1,7 +1,63 @@
 .btn
-    height: 50px
-    left: 50px
-    display: inline-block  
+    height: 40px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border-radius: 25px 
+    color: #fff
+    border: 0
+    font-size: 16px 
+    cursor: pointer
+    transition: all 0.3s ease
+    line-height: 24px
+    padding: 8px 20px 
+    text-align: center
+    -webkit-appearance: none
+    box-shadow: 1.378px 4.806px 21px 0px rgba(0, 0, 0, 0.08)
+    
+    @media (max-width: 575px)
+        font-size: 15px
+        padding: 8px 15px
+        height: 32px 
+        line-height: 16px 
+    
+    &-secondary
+        background-color: $color-secondary 
+        
+        &:hover
+            background-color: $color-secondary-hover 
+            
+
+    &-primary
+        background-color: $color-primary
+        
+        &:hover
+            background-color: $color-primary-hover 
+            
+    .btn-label,
+    .btn-icon
+        display: inline-block
+        vertical-align: middle 
+        
+    .btn-label
+        width: 1%
+        flex: 1 1 auto
+        text-align: center
+        
+    .btn-icon
+        max-height: 100%
+         
+        &:first-child
+            margin-right: 15px
+            
+        &:last-child
+            margin-left: 15px     
+
+
+
+
+
+
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
 .slick-arrow,

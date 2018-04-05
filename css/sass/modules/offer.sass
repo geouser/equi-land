@@ -1,63 +1,324 @@
 .offer
-	height: 800px
-	max-height: 100%
-	+flex($d: column, $ai: center, $j: center)
-	
-	background-image: url("../images/offer-main.jpg")
-	background-position: 50% 50%
-	-webkit-background-size: cover
-	-o-background-size: cover
-	background-size: cover
-	
-	h1
-		margin-bottom: 40px
-		font-size: 70px
-		color: #FFF
-		text-shadow: 0 0 2px rgba(0,0,0,.2)
-
-
-.offer--slider
-	height: 590px
+	min-height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
 	position: relative
-	background: #3D8EB9
-	@media (max-width: 600px)
-		height: 500px
-
-	.slick-track,
-	.slick-list
-		height: 100%
-
-	.slide
-		+flex ($d:column, $ai:center, $j:center)
-		position: absolute
-		left: 0
-		top: 0
+	background-image: url(../images/bg-1.png)
+	background-position: calc(50% - 250px) 50%
+	background-repeat: no-repeat 
+	overflow: hidden
+	
+	@media (max-width: 1199px)
+		padding: 50px 0
+		
+	@media (max-width: 991px)
+		background-position: 50% 0
+	
+	&:after
+		content: ''
 		width: 100%
 		height: 100%
-		background-position: 50% 50%
-		background-repeat: no-repeat
-		-webkit-background-size: cover
-		-o-background-size: cover
-		background-size: cover
+		pointer-events: none
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		background-image: url(../images/bg-2.png)
+		background-position: 100% 100% 
+		background-repeat: no-repeat 
+		z-index: 5 
+		
+		@media (max-width: 991px)
+			background-size: 100% 
+		
+	
 
-		@media (max-width: 800px)
-			padding: 0 30px
 
-		h1,
-		h2
-			color: #fff
-			font-size: 50px
-			font-weight: 700
+	.title
+		margin-bottom: 10px
+		
+		@media (max-width: 991px)
 			text-align: center
+		 
+		h2
+			color: $color-primary
+			font-size: 48px
+			line-height: 71px
+			
+			@media (max-width: 767px)
+				font-size: 42px
+				line-height: 64px  
+				
+			@media (max-width: 575px)
+				font-size: 36px
+				line-height: normal  
+			
+		h1
+			font-size: 69px
+			line-height: 71px  
+			
+			@media (max-width: 767px)
+				font-size: 60px
+				line-height: 64px  
+				
+			@media (max-width: 575px)
+				font-size: 44px
+				line-height: normal  
+			
 
-			@media (max-width: 1200px)
-				font-size: 40px
 
-			@media (max-width: 800px)
-				font-size: 32px
+	.content
+		font-size: 29px
+		color: $color-primary
+		line-height: 43px  
+		margin-bottom: 40px 
+		
+		@media (max-width: 991px)
+			text-align: center
+			
+		@media (max-width: 767px)
+			font-size: 24px
+			line-height: normal  
+		
 
-			@media (max-width: 600px)
-				font-size: 30px
+	.mailchimp
+		@media (max-width: 991px)
+			text-align: center
+			
+		p
+			font-size: 24px 
+			
+			@media (max-width: 767px)
+				font-size: 20px 
+			
+		&-form
+			margin-top: 16px 
+		
 
-		.button
-			margin-top: 16px
+
+
+
+
+.mailchimp-form
+	position: relative
+	width: 100%
+	max-width: 440px  
+	
+	@media (max-width: 991px)
+		margin-left: auto 
+		margin-right: auto 
+	
+	input
+		width: 100%
+		-webkit-appearance: none
+		box-shadow: 1.378px 4.806px 21px 0px rgba(0, 0, 0, 0.08)
+		height: 48px
+		border-radius: 24px
+		padding: 0 170px 0 25px
+		font-size: 14px
+		border: 0
+		
+		+placeholder
+			color: #b2b2b2
+			
+	.btn
+		position: absolute
+		top: 5px
+		height: 38px
+		right: 5px
+		width: 140px
+		padding-top: 7px
+		padding-bottom: 7px  
+		box-shadow: none
+		
+
+
+
+
+
+.news
+	@media (max-width: 991px)
+		padding-top: 40px
+		 
+	h3
+		font-size: 25px
+		font-weight: 300  
+		padding-left: 22px 
+		
+		@media (max-width: 991px)
+			font-weight: 400
+			font-size: 28px
+			text-align: center 
+			margin-bottom: 20px  
+		
+
+	&-slider
+		position: relative
+		
+		@media (max-width: 575px)
+			margin-left: -22px
+			margin-right: -22px  
+		
+		.slick-list
+			padding: 22px
+			
+		.slide
+			padding: 5px 0
+			transition: transform 0.5s ease
+			transform: scale(0.93)
+			
+			&.slick-current + .slick-active
+				transform: scale(1)
+			
+
+		.slick-arrow
+			width: 30px
+			height: 30px
+			background-color: transparent!important
+			
+			&.slick-next
+				left: 50%
+				bottom: 0
+				top: auto
+				right: auto
+				transform: translateX(-50%)
+				background-image: url(../images/down.png) 
+				background-size: auto 
+				background-repeat: no-repeat 
+				background-position: 50% 50%
+				
+			&.slick-prev
+				left: 50%
+				top: 0
+				bottom: auto
+				right: auto
+				transform: translateX(-50%)
+				background-image: url(../images/top.png) 
+				background-size: auto 
+				background-repeat: no-repeat 
+				background-position: 50% 50%
+				
+			&.slick-disabled
+				opacity: 0
+				
+
+		
+		&:before
+			content: ''
+			width: 100%
+			height: 25%
+			top: 0
+			left: 0
+			right: 0
+			background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)
+			position: absolute
+			z-index: 2
+			pointer-events: none 
+			
+		&:after
+			content: ''
+			width: 100%
+			height: 25%
+			bottom: 0
+			left: 0
+			right: 0
+			background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)
+			position: absolute
+			z-index: 2
+			pointer-events: none 
+
+
+
+.news-card
+	padding: 20px
+	position: relative
+	box-shadow: 1.378px 4.806px 21px 0px rgba(0, 0, 0, 0.08)
+	background-color: #fff 
+	
+	@media (max-width: 575px)
+		padding: 15px
+	
+	&:after
+		content: ''
+		width: 21px
+		height: 21px
+		position: absolute
+		top: 50%
+		left: 100%
+		background-image: url(../images/check.png)
+		background-repeat: no-repeat 
+		background-position: 50% 50% 
+		transform: translate(-50%, -50%)
+
+	
+	&-title,
+	&-content
+		font-style: italic 
+		font-size: 16px 
+		line-height: 24px 
+		
+	&-content
+		color: $color-primary 
+		
+
+	&-status
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		align-items: center
+		padding-top: 10px 
+		margin-bottom: -5px 
+		
+		
+		.status-badge
+			padding: 5px 10px
+			color: #959595
+			font-size: 14px
+			background-color: #E5EBF8  
+			border-radius: 14px
+			margin-bottom: 5px 
+			
+			@media (max-width: 1199px)
+				font-size: 12px 
+				
+			@media (max-width: 575px)
+				font-size: 10px 
+			
+			&:not(:last-child)
+				margin-right: 5px 
+				
+
+
+
+.socials
+	position: fixed
+	top: 50%
+	left: 45px
+	transform: translateY(-50%)
+	z-index: 10 
+	
+	@media (max-width: 1199px)
+		position: static
+		transform: none
+		text-align: center
+	
+	.social-item
+		padding: 20px 0
+		list-style: none 
+		
+		@media (max-width: 1199px)
+			display: inline-block
+			vertical-align: middle 
+			padding: 0 15px
+
+		a
+			display: block
+			transition: all 0.3s ease
+			
+			&:hover
+				transform: scale(1.2)
+			
+			img
+				display: block
+				height: 18px 

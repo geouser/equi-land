@@ -89,6 +89,26 @@ jQuery(document).ready(function($) {
 
 
 
+
+    $('.news-slider').slick({
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    })
+
+
+
     /*---------------------------
                                   Fancybox
     ---------------------------*/
