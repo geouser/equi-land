@@ -9,15 +9,8 @@ body
     font-size: 18px
     font-family: 'Josefine Sans' 
     padding-top: 80px
-    
-    @media (min-height: 750px) and (min-width: 1200px)
-    	padding-top: 0 
-    
-    @media (max-height: 750px) and (min-width: 1200px)
-    	padding-top: 80px
-    	
-    @media (max-width: 1199px)
-    	padding-top: 0 
+    @media( max-width: 991px)
+      padding-top: 0
 
 
 
@@ -68,3 +61,36 @@ body
   to
     opacity: 0.2
     transform: translateY(-20px)
+
+
+.response
+  padding: 10px 0
+
+
+.section 
+  padding: 120px 0
+  position: relative
+  z-index: 2
+  @media (max-width: 1199px)
+    padding: 80px 0
+  @media (max-width: 600px)
+    padding: 60px 0
+  .container
+    position: relative
+    z-index: 2
+
+
+.divide-250
+  display: block
+  &:after
+    content: ''
+    display: block
+    padding-top: 10vw
+  // @media (max-width: 1650px)
+  //   height: 200px
+  // @media (max-width: 920px)
+  //   height: 150px
+  // @media (max-width: 767px)
+  //   height: 100px
+  // @media (max-width: 340px)
+  //   height: 40px

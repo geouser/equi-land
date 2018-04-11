@@ -8,12 +8,18 @@
 	padding-top: 50px
 	padding-bottom: 25px  
 	
-	@media (max-height: 750px) and (min-width: 1200px)
+	@media (max-height: 750px) and (min-width: 1199px)
+		padding: 20px 0
+
+	@media (min-width: 991px)
 		padding: 20px 0
 		
-	@media (max-width: 1199px)
+	@media (max-width: 991px)
 		position: relative
 		padding: 20px 0
+
+	&.headroom--not-top
+		background-color: #fff
 		
 	
 	&-container
@@ -34,25 +40,29 @@
 		.flex-row
 			align-items: center
 			
-			@media (max-width: 1199px)
+			@media (max-width: 991px)
 				justify-content: center
 			
 	.site-actions
 
-		@media (max-width: 1199px)
+		@media (max-width: 991px)
 			padding-top: 20px
 			 
 		.flex-row
 			justify-content: flex-end
 			
-			@media (max-width: 1199px)
+			@media (max-width: 991px)
 				justify-content: center
 			
 		.btn
 			@media (min-width: 576px)
 				&:not(:last-child)
+					margin-right: 6px 
+			
+			@media (min-width: 1020px)
+				&:not(:last-child)
 					margin-right: 10px 
-				
+
 			@media (max-width: 575px)
 				margin: 5px
 
@@ -76,7 +86,7 @@
 		@media (max-width: 1600px)
 			padding-left: 30px 
 			
-		@media (max-width: 1199px)
+		@media (max-width: 991px)
 			width: 100%
 			text-align: center
 			padding-top: 20px
@@ -88,6 +98,9 @@
 			li
 				display: inline-block
 				vertical-align: middle 
+
+				@media (max-width: 1199px)
+					font-size: 17px 
 				
 				@media (max-width: 575px)
 					font-size: 16px 

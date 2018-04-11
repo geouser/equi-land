@@ -107,6 +107,7 @@ jQuery(document).ready(function($) {
         ]
     });
 
+
     $(window).on('resize', function(event) {
         event.preventDefault();
 
@@ -131,7 +132,18 @@ jQuery(document).ready(function($) {
     }
 
 
-
+    /*---------------------------
+                                    Accordeon
+    ---------------------------*/
+    $('.js-faq-handler').on('click', function(event) {
+        event.preventDefault();
+        var content = $(this).siblings('.faq-item-content');
+        $('.js-faq-handler').not($(this)).parent().removeClass('is-open');
+        $('.faq-item-content').not(content).slideUp();
+        $(this).parent().toggleClass('is-open');
+        content.slideToggle();
+    });
+    
     /*---------------------------
                                   Fancybox
     ---------------------------*/

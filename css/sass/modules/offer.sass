@@ -1,5 +1,5 @@
 .offer
-	min-height: 100%
+	min-height: 800px
 	display: flex
 	align-items: center
 	justify-content: center
@@ -7,33 +7,67 @@
 	background-image: url(../images/bg-1.png)
 	background-position: calc(50% - 250px) 50%
 	background-repeat: no-repeat 
-	overflow: hidden
-	
+	flex-wrap: wrap
+	@media (max-width: 1500px)
+		min-height: 600px
+		background-size: auto 100%
+	@media (max-width: 1500px)
+		min-height: 0
+		padding: 60px 0
+
 	@media (max-width: 1199px)
+		padding: 100px 0 60px
+
+	@media (max-width: 991px)
 		padding: 50px 0
 		min-height: 1px 
 		background-position: calc(50% - 250px) 0
 		
 	@media (max-width: 991px)
 		background-position: 50% 0
+		background-size: auto
 	
-	&:after
-		content: ''
-		width: 100%
-		height: 100%
-		pointer-events: none
-		position: absolute
-		left: 0
-		bottom: 0
-		right: 0
-		background-image: url(../images/bg-2.png)
-		background-position: 100% 100% 
-		background-repeat: no-repeat 
-		z-index: 5 
-		
-		@media (max-width: 1199px)
-			background-size: 100% 
-		
+	@media (max-width: 767px)
+		padding: 20px 0 40px
+	
+	// &:after
+	// 	content: ''
+	// 	width: 100%
+	// 	height: 58vw
+	// 	max-width: 100vw
+	// 	pointer-events: none
+	// 	position: absolute
+	// 	right: 0
+	// 	top: -12%
+	// 	right: 0
+	// 	background-image: url(../images/bg-2.png)
+	// 	background-position: 100% 100% 
+	// 	background-repeat: no-repeat 
+	// 	z-index: 0
+	// 	background-size: 100% auto
+	// 	@media (max-width: 1650px)
+	// 		top: 10%
+	// 	@media (max-width: 1500px)
+	// 		top: 18%
+	// 	@media (max-width: 1400px)
+	// 		top: 25%
+	// 	@media (max-width: 1300px)
+	// 		top: 35%
+	// 	@media (max-width: 1199px)
+	// 		top: 50%
+	// 	@media (max-width: 1100px)
+	// 		top: 55%
+	// 	@media (max-width: 991px)
+	// 		top: 75%
+	// 	@media (max-width: 600px)
+	// 		top: 80%
+	// 	@media (max-width: 500px)
+	// 		top: 90%
+			
+
+	.container
+		z-index: 2
+		position: relative
 	
 
 
@@ -56,6 +90,9 @@
 				font-size: 36px
 				line-height: normal  
 			
+			@media (max-width: 400px)
+				font-size: 32px
+			
 		h1
 			font-size: 69px
 			line-height: 71px  
@@ -67,6 +104,9 @@
 			@media (max-width: 575px)
 				font-size: 44px
 				line-height: normal  
+
+			@media (max-width: 400px)
+				font-size: 38px
 			
 
 
@@ -83,6 +123,9 @@
 		@media (max-width: 767px)
 			font-size: 24px
 			line-height: normal  
+
+		@media (max-width: 400px)
+			font-size: 18px
 		
 
 	.mailchimp
@@ -94,10 +137,13 @@
 			
 			@media (max-width: 767px)
 				font-size: 20px 
+
+			@media (max-width: 400px)
+				font-size: 16px
 			
 		&-form
 			margin-top: 16px 
-		
+
 
 
 
@@ -147,7 +193,7 @@
 	h3
 		font-size: 25px
 		font-weight: 300  
-		padding-left: 39px 
+		padding-left: 39px
 		
 		@media (max-width: 991px)
 			font-weight: 400
@@ -171,13 +217,12 @@
 		
 		.slick-list
 			padding: 22px
+			padding-top: 0
 			
 		.slide
 			padding: 5px 0
 			transition: transform 0.5s ease, opacity 0.5s ease
 			transform: scale(0.90)
-			opacity: 0
-			
 			&.slick-active
 				opacity: 0.6
 			
@@ -242,14 +287,27 @@
 			position: absolute
 			z-index: 2
 			pointer-events: none 
+			@media (max-width: 1100px) and (min-width: 992px)
+				display: none
+			@media (max-width: 600px)
+				display: none
 
 
 
 .news-card
 	padding: 20px
+	min-height: 124px
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	flex-direction: column
 	position: relative
 	box-shadow: 1.378px 4.806px 21px 0px rgba(0, 0, 0, 0.08)
 	background-color: #fff 
+
+	@media (max-width: 1500px) and (min-width: 992px)
+		padding: 18px 20px
+		min-width: 120px
 	
 	@media (max-width: 575px)
 		padding: 15px
@@ -316,6 +374,19 @@
 			font-size: 10px 
 			
 
+	&.no-tick
+		&:after
+			display: none
+
+	&.no-status
+		.status-badge
+			display: none
+
+	&.no-date
+		.news-card-date
+			display: none
+
+
 
 
 .socials
@@ -324,11 +395,24 @@
 	left: 45px
 	transform: translateY(-50%)
 	z-index: 10 
-	
+
 	@media (max-width: 1199px)
-		position: static
-		transform: none
+		width: 300px
+		left: 0
+		right: 0
+		margin: auto
 		text-align: center
+		bottom: 0px
+		padding: 20px 0
+		top: auto
+		transform: none
+
+	@media (max-width: 1199px)
+		display: block
+		position: static
+		margin-top: 40px
+		background-color: rgba(255,255,255,.6)
+		padding: 0
 	
 	.social-item
 		padding: 20px 0
